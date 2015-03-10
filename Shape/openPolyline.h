@@ -3,10 +3,12 @@
 
 namespace ShapeLibrary
 {
-	class OpenPolyline
+	class OpenPolyline : public Shape
 	{
-
-
-
+	public :
+		OpenPolyline(IWindowAPI& _windowAPI);
+		virtual void draw() const override;
+	private :
 	};
+
 }
