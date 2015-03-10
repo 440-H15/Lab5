@@ -1,11 +1,12 @@
 #pragma once
 #include "stdafx.h"
 
-namespace ShapeLibrary
+namespace ShapeLibrary 
 {
-	class ClosedPolyline
+	class ClosedPolyline : public Shape
 	{
-	
+	public:
+		ClosedPolyline(IWindowAPI & _windowAPI);
 
 
 	};
