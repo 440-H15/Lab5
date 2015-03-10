@@ -7,7 +7,6 @@ namespace ShapeLibrary
 	{
 	public:
 		ClosedPolyline(IWindowAPI & _windowAPI);
-
-
+		virtual void draw();
 	};
 }
