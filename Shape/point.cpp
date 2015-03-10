@@ -19,6 +19,5 @@ bool Point::operator == (const Point & point) const
 
 bool Point::operator != (const Point & point) const
 {
-	throw logic_error("Not Implmented yet");
-	return false; 
+	return !(this->x == point.x && this->y == point.y);
 }
