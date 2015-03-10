@@ -6,6 +6,8 @@ ClosedPolyline::ClosedPolyline(IWindowAPI &_windowAPI) : Shape(_windowAPI){}
 
 void ClosedPolyline::draw()
 {
+	if (points.size() <= 2) throw std::runtime_error("Nombre de points insuffisant.");
+
 	windowAPI->setDrawingColor(lineColor);
 	for (int index = 0; index < points.size(); index++)
 	{
