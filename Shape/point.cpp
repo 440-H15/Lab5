@@ -13,9 +13,8 @@ Point::Point( double _x, double _y ) :
 }
 
 bool Point::operator == (const Point & point) const
-{
-	throw logic_error("Not Implmented yet");
-	return true;
+{	
+	return (this->x == point.x && this->y == point.y);
 }
 
 bool Point::operator != (const Point & point) const
