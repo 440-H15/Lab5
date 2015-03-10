@@ -5,11 +5,10 @@
 using namespace ShapeLibrary;
 
 
-Point::Point( double _x, double _y ) :
-	x(_x), 
-	y(_y)
+Point::Point( double _x, double _y )
 {	
-	
+	if (_x < 0 || _y < 0)
+		throw invalid_argument("Les coordonnées ne peuvent pas être négatives.");
 }
 
 bool Point::operator == (const Point & point) const
