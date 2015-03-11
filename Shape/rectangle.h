@@ -13,7 +13,7 @@ namespace ShapeLibrary
 		void setPosition(const Point &_point);
 	private:
 		Point position = Point(0,0);
-		unsigned int height;
-		unsigned int width;
+		unsigned int height = 0;
+		unsigned int width = 0;
 	};
 }

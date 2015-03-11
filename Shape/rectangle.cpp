@@ -6,8 +6,9 @@ Rectangle::Rectangle(IWindowAPI &_windowAPI) : Shape(_windowAPI){}
 
 void Rectangle::draw()
 {
-	windowAPI->setDrawingColor(lineColor);
+	windowAPI->setDrawingColor(lineColor);	
 	windowAPI->drawRectangle(position, width, height);
+	windowAPI->fillRectangle(position, width, height);
 }
 
 void Rectangle::setHeight(const int _height)
