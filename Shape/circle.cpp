@@ -6,6 +6,7 @@ Circle::Circle(IWindowAPI &_windowAPI) : Shape(_windowAPI){}
 
 void Circle::draw()
 {
+	if (center == nullptr) throw std::runtime_error("Le centre n'a pas été définie");
 	windowAPI->setDrawingColor(lineColor);
 	windowAPI->drawCircle(*center, radius);
 	windowAPI->fillCircle(*center, radius);
