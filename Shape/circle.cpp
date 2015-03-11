@@ -18,5 +18,6 @@ void Circle::setCenter(Point &_point)
 
 void Circle::setRadius(const int _radius)
 {
+	if (_radius < 1) throw std::invalid_argument("Le rayon doit au moins être de 1");
 	radius = _radius;
 }
