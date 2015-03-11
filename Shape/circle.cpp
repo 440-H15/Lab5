@@ -8,6 +8,7 @@ void Circle::draw()
 {
 	windowAPI->setDrawingColor(lineColor);
 	windowAPI->drawCircle(*center, radius);
+	windowAPI->fillCircle(*center, radius);
 }
 
 void Circle::setCenter(Point &_point)
