@@ -3,8 +3,15 @@
 
 namespace ShapeLibrary
 {
-	class Circle
+	class Circle : public Shape
 	{
-	
+	public:
+		Circle(IWindowAPI &_windowAPI);
+		virtual void draw();
+		void setCenter(Point &_point);
+		void setRadius(const int _radius);
+	private:
+		Point * center = nullptr;
+		unsigned int radius;
 	};
 }
