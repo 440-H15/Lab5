@@ -13,11 +13,13 @@ void Rectangle::draw()
 
 void Rectangle::setHeight(const int _height)
 {
+	if (_height < 1) throw std::invalid_argument("La valeur doit au moins être de 1");
 	height = _height;
 }
 
 void Rectangle::setWidth(const int _width)
 {
+	if (_width < 1) throw std::invalid_argument("La valeur doit au moins être de 1");
 	width = _width;
 }
 
