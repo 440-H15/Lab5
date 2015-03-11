@@ -10,9 +10,9 @@ namespace ShapeLibrary
 		virtual void draw();
 		void setHeight(const int _height);
 		void setWidth(const int _width);
-		void setPosition(const Point &_point);
+		void setPosition(Point &_point);
 	private:
-		Point position = Point(0,0);
+		Point * position = nullptr;
 		unsigned int height = 0;
 		unsigned int width = 0;
 	};
