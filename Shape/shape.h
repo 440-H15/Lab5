@@ -23,7 +23,7 @@ namespace ShapeLibrary
 		void add(const Point &_point);
 	protected:
 		vector<Point> points;
-		Color lineColor;
+		Color lineColor = Color::WHITE;
 		Color fillColor;
 		IWindowAPI * windowAPI;
 	};

@@ -2,7 +2,7 @@
 
 using namespace ShapeLibrary;
 
-Shape::Shape(IWindowAPI& _windowAPI)
+Shape::Shape(IWindowAPI & _windowAPI)
 {
 	windowAPI = &_windowAPI;
 }

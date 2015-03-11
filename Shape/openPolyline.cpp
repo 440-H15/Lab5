@@ -2,7 +2,7 @@
 
 using namespace ShapeLibrary;
 
-OpenPolyline::OpenPolyline(IWindowAPI &_windowAPI) : Shape(_windowAPI){};
+OpenPolyline::OpenPolyline(IWindowAPI &_windowAPI) : Shape(_windowAPI){}
 
 void OpenPolyline::draw()
 {
