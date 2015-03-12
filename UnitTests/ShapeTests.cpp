@@ -8,17 +8,17 @@ namespace UnitTests
 	TEST_CLASS(ShapeTests)
 	{
 	public:
-		//FakeWindowAPI * fakeWindowAPI;
+		FakeWindowAPI * fakeWindowAPI;
 
-		//TEST_METHOD_INITIALIZE(ShapeTests_Initialize)
-		//{
-		//	fakeWindowAPI = new FakeWindowAPI(640,480,"Super beau dessin");
-		//}
-		//TEST_METHOD_CLEANUP(ShapeTests_CleanUp)
-		//{
-		//	delete fakeWindowAPI;
-		//}
-		//
+		TEST_METHOD_INITIALIZE(ShapeTests_Initialize)
+		{
+			fakeWindowAPI = new FakeWindowAPI(640,480,"Super beau dessin");
+		}
+		TEST_METHOD_CLEANUP(ShapeTests_CleanUp)
+		{
+			delete fakeWindowAPI;
+		}
+		
 		//TEST_METHOD(getPoint_should_return_the_point)
 		//{
 		//	//Arrange
