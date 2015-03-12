@@ -8,8 +8,10 @@ namespace WindowRender
 {
 	class WindowsRender
 	{
-	
-		
-
+	public:
+		WindowsRender(IWindowAPI &_windowAPI);
+		void render();
+	private:
+		IWindowAPI *windowAPI;
 	};
 }
