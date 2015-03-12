@@ -12,7 +12,6 @@ fillColor(Color::INVISIBLE)
 
 OpenPolyline::~OpenPolyline()
 {
-	delete windowAPI;
 }
 
 void OpenPolyline::add(Point _point)
@@ -28,7 +27,7 @@ void OpenPolyline::draw()
 	{
 		if ((i + 1) < points.size())
 		{
-			windowAPI->drawLine(points[i], points[i + 1]);			
+			windowAPI->drawLine(points[i], points[i + 1]);
 		}
 	}
 }
