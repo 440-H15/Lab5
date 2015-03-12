@@ -6,12 +6,12 @@ namespace ShapeLibrary
 	class OpenPolyline
 	{
 	public:
-		OpenPolyline(IWindowAPI& _fakeWindowAPI);
+		OpenPolyline(IWindowAPI& _windowAPI);
 
 		void add(Point _point);
 		void draw();
 	private:
-		IWindowAPI* fakeWindowAPI;
+		IWindowAPI* windowAPI;
 		vector<Point> point;
 		int nbPoint;
 	};
