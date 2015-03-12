@@ -18,7 +18,7 @@ namespace ShapeLibrary
 		const Color & getFillColor() const;
 		const Point & getPoint(const unsigned int _index) const;
 		unsigned int getNumberOfPoints() const;
-		void add(const Point & _point);
+		virtual void add(const Point & _point);
 		virtual ~Shape();
 	private:
 		vector<Point> point;
