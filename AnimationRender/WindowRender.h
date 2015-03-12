@@ -8,8 +8,9 @@ namespace WindowRender
 {
 	class WindowsRender
 	{
-	
-		
+	public:
+		WindowsRender();
+		void render();	
 
 	};
 }

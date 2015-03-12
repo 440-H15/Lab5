@@ -19,11 +19,11 @@
     <Filter Include="ShapeTests">
       <UniqueIdentifier>{cfe45983-dc83-4aa2-9e8e-879011178820}</UniqueIdentifier>
     </Filter>
-    <Filter Include="AnimationRenderTests">
-      <UniqueIdentifier>{ffb80928-4685-4311-97a9-3f5fe0ef7e49}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ShapeFactoryTests">
       <UniqueIdentifier>{718d8758-832b-4181-b955-f1922dfeb460}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ShapeTests\AnimationRenderTests">
+      <UniqueIdentifier>{ffb80928-4685-4311-97a9-3f5fe0ef7e49}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -63,7 +63,7 @@
       <Filter>ShapeTests</Filter>
     </ClCompile>
     <ClCompile Include="WindowRenderTests.cpp">
-      <Filter>AnimationRenderTests</Filter>
+      <Filter>ShapeTests\AnimationRenderTests</Filter>
     </ClCompile>
     <ClCompile Include="PolygonTests.cpp">
       <Filter>ShapeTests</Filter>

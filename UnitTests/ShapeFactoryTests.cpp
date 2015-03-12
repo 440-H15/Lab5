@@ -7,9 +7,9 @@ namespace UnitTests
 {
 	TEST_CLASS(ShapeFactoryTests)
 	{
-	public:
-		//FakeWindowAPI * fakeWindowAPI;
-		//ShapeFactory * shapeFactory;
+	//public:
+	//	FakeWindowAPI * fakeWindowAPI;
+	//	ShapeFactory * shapeFactory;
 
 		//TEST_METHOD_INITIALIZE(ShapeFactoryTests_Initialize)
 		//{
@@ -21,7 +21,7 @@ namespace UnitTests
 		//	delete fakeWindowAPI;
 		//	delete shapeFactory;
 		//}
-		//
+		
 		//TEST_METHOD(should_create_an_OpenPolyLine)
 		//{
 		//	//Arrange
