@@ -13,5 +13,8 @@ namespace ShapeLibrary
 	public:
 
 
+	private:
+
+
 	};
 }
