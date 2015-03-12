@@ -16,6 +16,7 @@ void OpenPolyline::add(Point _point)
 
 void OpenPolyline::draw() //Pas sur que toute marche comme il faut
 {
+	if (nbPoint < 2) throw runtime_error("Il doit y avoir au minimum 2 points");
 	this->fakeWindowAPI->setDrawingColor(Color::BLUE);
 	vector<Point>::iterator it;
 	for (it = point.begin(); it < (point.end() - 1); it)
