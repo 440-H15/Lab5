@@ -11,9 +11,12 @@ namespace ShapeLibrary
 		void setHeight(int _height);
 		void setWidth(int _width);
 		void draw();
+		void setFillColor(Color _color);
+		void setLineColor(Color _color);
 	private:
 		IWindowAPI* windowAPI;
 		Point* point;
+		Color lineColor;
 		int height;
 		int width;
 	};
