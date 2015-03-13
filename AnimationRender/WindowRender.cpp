@@ -12,4 +12,5 @@ void WindowsRender::render()
 {
 	windowAPI->clearScreen();
 	if (windowAPI->hasEvent()) windowAPI->getEvent();
+	windowAPI->displayScreen();
 }
