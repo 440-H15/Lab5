@@ -47,9 +47,9 @@ bool Polygon::lineCrossLine(const Point& _point) const
 
 		b = getPoint(i).y - (slope * getPoint(i).x);
 
-		float y = ((currentB - b) / (slope - currentSlope));
+		float x = ((currentB - b) / (slope - currentSlope));
 
-		if ((y > getPoint(i).y && y > getPoint(i + 1).y) || (y < getPoint(i).y && y < getPoint(i + 1).y))
+		if ((x < getPoint(i).x && x > getPoint(i + 1).x) || (x > getPoint(i).x && x < getPoint(i + 1).x))
 			return true;
 	}
 	return false;
@@ -57,5 +57,8 @@ bool Polygon::lineCrossLine(const Point& _point) const
 
 float Polygon::findSlope(const Point& _firstPoint, const Point& _secondPoint) const
 {
-	return (_secondPoint.y - _firstPoint.y) / (_secondPoint.x - _firstPoint.x);
+	if (_secondPoint.x != _firstPoint.x)
+		return (_secondPoint.y - _firstPoint.y) / (_secondPoint.x - _firstPoint.x);
+	else
+		return 0;
 }

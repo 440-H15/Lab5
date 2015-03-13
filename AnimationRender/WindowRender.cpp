@@ -10,17 +10,22 @@ WindowsRender::WindowsRender(IWindowAPI &_windowAPI):
 
 void WindowsRender::render()
 {
-	if (windowAPI->hasEvent())
-		windowAPI->getEvent();
-
-	for (Shape* shape : shapes)
+	bool quit = false;
+	while (!quit)
 	{
-		shape->draw();
-	}
+		while (windowAPI->hasEvent()){
+			if (windowAPI->getEvent().getEventType() == QUIT)
+				quit = true;
+		}
 
-	windowAPI->clearScreen();
-	windowAPI->displayScreen();
-	windowAPI->wait(1000);
+		windowAPI->clearScreen();
+		for (Shape* shape : shapes)
+		{
+			shape->draw();
+		}
+		windowAPI->displayScreen();
+		windowAPI->wait(100);
+	}
 }
 
 void WindowsRender::attach(Shape& _shape)

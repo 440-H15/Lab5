@@ -19,5 +19,5 @@ void ClosedPolyline::draw() const
 	{
 		windowAPI->drawLine(getPoint(i), getPoint(i + 1));
 	}
-	windowAPI->drawLine(getPoint(getNumberOfPoints() -1), getPoint(1));
+	windowAPI->drawLine(getPoint(getNumberOfPoints() -1), getPoint(0));
 }
