@@ -4,12 +4,12 @@
 using namespace ShapeLibrary;
 
 Rectangle::Rectangle(IWindowAPI& _windowAPI) :
-windowAPI(&_windowAPI),
-lineColor(Color::BLACK),
-fillColor(Color::BROWN),
 width(1),
 height(1)
 {
+	windowAPI = &_windowAPI;
+	lineColor = Color::WHITE;
+	fillColor = Color::INVISIBLE;
 }
 
 Rectangle::~Rectangle()
@@ -35,30 +35,9 @@ void Rectangle::setWidth(int _width)
 
 void Rectangle::draw()
 {
-	//if (width == 0 || height == 0) throw runtime_error("CRISS");
-	if (points.size() == 0) throw runtime_error("CRISS");
+	if (points.size() == 0) throw runtime_error("Il doit y avoir au moins 1 point");
 	windowAPI->setDrawingColor(lineColor);
 	windowAPI->drawRectangle(points[0], width, height);
 	windowAPI->setDrawingColor(fillColor);
 	windowAPI->fillRectangle(points[0], width, height);
-}
-
-void Rectangle::setLineColor(Color _color)
-{
-	lineColor = _color;
-}
-
-Color Rectangle::getLineColor()
-{
-	return lineColor;
-}
-
-void Rectangle::setFillColor(Color _color)
-{
-	fillColor = _color;
-}
-
-Color Rectangle::getFillColor()
-{
-	return fillColor;
 }

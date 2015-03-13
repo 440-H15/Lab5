@@ -3,7 +3,7 @@
 
 namespace ShapeLibrary
 {
-	class Rectangle
+	class Rectangle : public Shape
 	{
 	public:
 		Rectangle(IWindowAPI& _windowAPI);
@@ -14,18 +14,9 @@ namespace ShapeLibrary
 		void setWidth(int _width);
 		void draw();
 
-		void setLineColor(Color _color);
-		Color getLineColor();
-		void setFillColor(Color _color);
-		Color getFillColor();
-
 	private:
-		IWindowAPI* windowAPI;
-		vector<Point> points;
 		int height;
 		int width;
-		Color lineColor;
-		Color fillColor;
 
 	};
 }

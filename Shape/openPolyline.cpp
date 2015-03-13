@@ -3,61 +3,13 @@
 
 using namespace ShapeLibrary;
 
-OpenPolyline::OpenPolyline(IWindowAPI& _windowAPI) :
-windowAPI(&_windowAPI),
-lineColor(Color::BLACK),
-fillColor(Color::INVISIBLE)
+OpenPolyline::OpenPolyline(IWindowAPI& _windowAPI)
 {
+	windowAPI = &_windowAPI;
+	lineColor = Color::WHITE;
+	fillColor = Color::INVISIBLE;
 }
 
 OpenPolyline::~OpenPolyline()
 {
-}
-
-void OpenPolyline::add(Point _point)
-{
-	points.push_back(_point);
-}
-
-void OpenPolyline::draw()
-{
-	if (points.size() < 2) throw runtime_error("Minimum de deux points pour pouvoir dessiner");
-	windowAPI->setDrawingColor(lineColor);
-	for (int i = 0; i < points.size(); i++)
-	{
-		if ((i + 1) < points.size())
-		{
-			windowAPI->drawLine(points[i], points[i + 1]);
-		}
-	}
-}
-
-Point OpenPolyline::getPoint(int _index)
-{
-	return points[_index];
-}
-
-int OpenPolyline::getNumberOfPoints()
-{
-	return points.size();
-}
-
-void OpenPolyline::setLineColor(Color _color)
-{
-	lineColor = _color;
-}
-
-Color OpenPolyline::getLineColor()
-{
-	return lineColor;
-}
-
-void OpenPolyline::setFillColor(Color _color)
-{
-	fillColor = _color;
-}
-
-Color OpenPolyline::getFillColor()
-{
-	return fillColor;
 }
