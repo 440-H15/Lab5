@@ -1,6 +1,10 @@
 #include "stdafx.h"
 
 using namespace ShapeLibrary;
+OpenPolyline::OpenPolyline()
+{
+
+}
 
 OpenPolyline::OpenPolyline(IWindowAPI& _windowAPI)
 {

@@ -11,7 +11,8 @@ namespace ShapeLibrary
 	class Shape
 	{
 	public:
-
+		virtual void add(Point _point);
+		virtual void draw();
 
 	};
 }
