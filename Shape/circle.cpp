@@ -25,9 +25,7 @@ void Circle::draw() const
 	if (getNumberOfPoints() < 1)
 		throw runtime_error("Le cercle doit avoir un centre.");
 
-	windowAPI->setDrawingColor(getFillColor());
-	windowAPI->fillCircle(getPoint(0), radius);
-
 	windowAPI->setDrawingColor(getLineColor());
+	windowAPI->fillCircle(getPoint(0), radius);
 	windowAPI->drawCircle(getPoint(0), radius);
 }

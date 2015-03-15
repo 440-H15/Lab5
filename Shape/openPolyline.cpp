@@ -9,7 +9,7 @@ OpenPolyline::OpenPolyline(IWindowAPI& _windowAPI) :
 
 void OpenPolyline::draw() const
 {
-	windowAPI->setDrawingColor(getLineColor());
+	windowAPI->setDrawingColor(getFillColor());
 
 	if (getNumberOfPoints() < 2)
 		throw runtime_error("In n'y a pas assez de points pour dessiner une ligne.");
