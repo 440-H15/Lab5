@@ -51,4 +51,5 @@ void Shape::add(const Point& _point)
 
 Shape::~Shape()
 {
+	point.clear();
 }

@@ -9,7 +9,7 @@ Rectangle::Rectangle(IWindowAPI& _windowAPI)
 
 void Rectangle::setPosition(Point& _point)
 {
-	add(_point);
+	Shape::add(_point);
 }
 
 void Rectangle::setWidth(const int _width)

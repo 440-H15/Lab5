@@ -13,6 +13,7 @@ namespace WindowRender
 		void render();
 		void attach(Shape &_shape);
 		void putOnTop(Shape& shape);
+		~WindowsRender();
 	private:
 		IWindowAPI *windowAPI;
 		vector<Shape*> shapes;

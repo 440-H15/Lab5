@@ -9,7 +9,7 @@ Circle::Circle(IWindowAPI& _windowAPI) :
 
 void Circle::setCenter(const Point& point)
 {
-	add(point);
+	Shape::add(point);
 }
 
 void Circle::setRadius(const int _radius)

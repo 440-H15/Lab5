@@ -51,3 +51,9 @@ void WindowsRender::putOnTop(Shape& _shape)
 	}
 	shapes.push_back(&_shape);
 }
+
+WindowsRender::~WindowsRender(){
+	for (Shape *shape : shapes){
+		delete shape;
+	}
+}

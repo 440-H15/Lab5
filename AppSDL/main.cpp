@@ -4,7 +4,7 @@
 #include "SDLWindowAPI.h"
 
 #include <iostream>
-//#include <vld.h>
+#include <vld.h>
 
 using namespace	SDL_WINDOW_UI;
 using namespace WindowRender;
