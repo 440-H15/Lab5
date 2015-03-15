@@ -7,9 +7,10 @@ Rectangle::Rectangle(IWindowAPI &_windowAPI) : Shape(_windowAPI){}
 void Rectangle::draw()
 {
 	if (position == nullptr) throw std::runtime_error("Une des dimention n'a pas été définie");
+	windowAPI->setDrawingColor(fillColor);
+	windowAPI->fillRectangle(*position, width, height);
 	windowAPI->setDrawingColor(lineColor);	
 	windowAPI->drawRectangle(*position, width, height);
-	windowAPI->fillRectangle(*position, width, height);
 }
 
 void Rectangle::setHeight(const int _height)

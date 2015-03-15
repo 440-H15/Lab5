@@ -9,7 +9,7 @@ Shape::Shape(IWindowAPI & _windowAPI)
 
 Shape::~Shape()
 {
-	
+	points.clear();
 }
 
 void Shape::setLineColor(const Color& _lineColor)

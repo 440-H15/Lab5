@@ -6,15 +6,16 @@ Circle::Circle(IWindowAPI &_windowAPI) : Shape(_windowAPI){}
 
 void Circle::draw()
 {
-	if (center == nullptr) throw std::runtime_error("Le centre n'a pas été définie");
+	if (points.size() == 0) throw std::runtime_error("Le centre n'a pas été définie");
+	windowAPI->setDrawingColor(fillColor);
+	windowAPI->fillCircle(points.at(0), radius);
 	windowAPI->setDrawingColor(lineColor);
-	windowAPI->drawCircle(*center, radius);
-	windowAPI->fillCircle(*center, radius);
+	windowAPI->drawCircle(points.at(0), radius);
 }
 
 void Circle::setCenter(Point &_point)
 {
-	center = &_point;
+	points.push_back(_point);
 }
 
 void Circle::setRadius(const int _radius)

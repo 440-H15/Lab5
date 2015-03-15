@@ -10,6 +10,7 @@ namespace WindowRender
 	{
 	public:
 		WindowsRender(IWindowAPI &_windowAPI);
+		~WindowsRender();
 		void render();	
 		void attach(Shape &_shape);
 		void putOnTop(Shape &_shape);

@@ -8,10 +8,10 @@ void Polygon::add(const Point &_point)
 {
 	if (points.size() >= 2)
 	{
+		Point line2[] {points.at(points.size() - 1), _point};
 		for (int index = points.size() - 2; index >= 0; index--)
 		{
 			Point line1[] {points.at(index), points.at(index + 1)};
-			Point line2[] {points.at(points.size() - 1), _point};
 			if (doLineCross(line1,line2))
 				throw std::runtime_error("Point invalide");
 		}
@@ -27,18 +27,20 @@ bool Polygon::doLineCross(Point line1[], Point line2[])
 	float origine2 = line2[0].y - (pente2 * line2[0].x);
 
 	if (pente1 == pente2 && origine1 == origine2) return true;
+
 	float commonPoint = 0;
-	if (line1[1].x - line1[0].x == 0)
+
+	if (line1[1].x == line1[0].x)
 	{
 		commonPoint = line1[0].x;
 	}
-	else if (line2[1].x - line2[0].x == 0)
+	else if (line2[1].x == line2[0].x)
 	{
 		commonPoint = line2[0].x;
 	}
 	else
 	{
-		commonPoint = (origine1 - origine2) / (pente2- pente1);
+		commonPoint = (origine1 - origine2) / (pente2 - pente1);
 	}
 	
 	commonPoint = roundf(commonPoint * 10) / 10;

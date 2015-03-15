@@ -8,16 +8,33 @@ WindowsRender::WindowsRender(IWindowAPI &_windowAPI)
 	windowAPI = &_windowAPI;
 }
 
-void WindowsRender::render()
+WindowsRender::~WindowsRender()
 {
-	windowAPI->clearScreen();
-	if (windowAPI->hasEvent()) windowAPI->getEvent();
 	for (Shape * shape : shapes)
 	{
-		shape->draw();
+		delete shape;
 	}
-	windowAPI->wait(1000);
-	windowAPI->displayScreen();
+}
+
+void WindowsRender::render()
+{
+	bool dontQuit = true;
+	while (dontQuit)
+	{
+		while (windowAPI->hasEvent())
+		{
+			if (windowAPI->getEvent().getEventType() == QUIT)
+				delete windowAPI->getEvent();
+				dontQuit = false;
+		}		
+		windowAPI->clearScreen();
+		for (Shape * shape : shapes)
+		{
+			shape->draw();
+		}
+		windowAPI->displayScreen();
+		windowAPI->wait(100);
+	}	
 }
 
 void WindowsRender::attach(Shape &_shape)
