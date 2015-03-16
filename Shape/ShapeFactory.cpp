@@ -7,19 +7,19 @@ ShapeFactory::ShapeFactory(IWindowAPI &_windowAPI)
 	windowAPI = &_windowAPI;
 }
 
-OpenPolyline & ShapeFactory::createOpenPolyLine()
+OpenPolyline & ShapeFactory::createOpenPolyLine() const
 {
 	OpenPolyline * openPolyline = new OpenPolyline(*windowAPI);
 	return *openPolyline;
 }
 
-ClosedPolyline & ShapeFactory::createClosedPolyLine()
+ClosedPolyline & ShapeFactory::createClosedPolyLine() const
 {
 	ClosedPolyline * closedPolyline = new ClosedPolyline(*windowAPI);
 	return *closedPolyline;
 }
 
-Rectangle & ShapeFactory::createRectangle(Point & _center, const int _height, const int _width)
+Rectangle & ShapeFactory::createRectangle(Point & _center, const int _height, const int _width) const
 {
 	Rectangle * rectangle = new Rectangle(*windowAPI);
 	rectangle->setHeight(_height);
@@ -28,13 +28,13 @@ Rectangle & ShapeFactory::createRectangle(Point & _center, const int _height, co
 	return *rectangle;
 }
 
-Polygon & ShapeFactory::createPolygone()
+Polygon & ShapeFactory::createPolygone() const
 {
 	Polygon * polygone = new Polygon(*windowAPI);
 	return * polygone;
 }
 
-Circle & ShapeFactory::createCircle(Point & _center, const int _radius)
+Circle & ShapeFactory::createCircle(Point & _center, const int _radius) const
 {
 	Circle * cercle = new Circle(*windowAPI);
 	cercle->setCenter(_center);

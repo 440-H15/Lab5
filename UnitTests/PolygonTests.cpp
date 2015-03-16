@@ -85,5 +85,30 @@ namespace UnitTests
 			Assert::IsTrue(fakeWindowAPI->setDrawingColor_hasBeenCalled());
 			Assert::AreEqual(NOMBRE_DE_LIGNE_DESSINEES, fakeWindowAPI->drawLine_getnumberOfCall());
 		}
+
+		TEST_METHOD(add_point_to_a_complex_polygon_that_cross_preivous_lines_should_not_throw_excpetion)
+		{
+			//Arrange
+			polygon->add(Point(120, 90));
+			polygon->add(Point(90, 90));
+			polygon->add(Point(80, 40));
+			polygon->add(Point(120, 40));
+			polygon->add(Point(100, 50));
+
+			//Action
+			bool exceptionThrown = false;
+
+			try
+			{
+			polygon->add(Point(100, 80));				
+			}
+			catch (runtime_error ex)
+			{
+				exceptionThrown = false;
+			}
+
+			//Assert
+			Assert::IsTrue(!exceptionThrown);
+		}
 	};
 }

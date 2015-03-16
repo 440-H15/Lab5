@@ -24,7 +24,6 @@ void WindowsRender::render()
 		while (windowAPI->hasEvent())
 		{
 			if (windowAPI->getEvent().getEventType() == QUIT)
-				delete windowAPI->getEvent();
 				dontQuit = false;
 		}		
 		windowAPI->clearScreen();

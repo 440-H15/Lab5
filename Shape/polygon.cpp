@@ -28,31 +28,40 @@ bool Polygon::doLineCross(Point line1[], Point line2[])
 
 	if (pente1 == pente2 && origine1 == origine2) return true;
 
-	float commonPoint = 0;
-
+	float commonX = 0;
+	float commonY = 0;
+	
 	if (line1[1].x == line1[0].x)
 	{
-		commonPoint = line1[0].x;
+		commonX = line1[0].x;
+		commonY = commonX * pente2 + origine2;
 	}
 	else if (line2[1].x == line2[0].x)
 	{
-		commonPoint = line2[0].x;
+		commonX = line2[0].x;
+		commonY = commonX * pente1 + origine1;
 	}
 	else
 	{
-		commonPoint = (origine1 - origine2) / (pente2 - pente1);
+		commonX = (origine1 - origine2) / (pente2 - pente1); 
+		commonY = commonX * pente2 + origine2;
 	}
 	
-	commonPoint = roundf(commonPoint * 10) / 10;
+	commonX = roundf(commonX * 10) / 10;
+	commonY = roundf(commonY * 10) / 10;
+	
+	bool inXRange = commonX >= min(line2[0].x, line2[1].x) && commonX <= max(line2[0].x, line2[1].x);
+	bool inYRange = commonY >= min(line2[0].y, line2[1].y) && commonY <= max(line2[0].y, line2[1].y);
 
-	int minX = 1000;
-	int maxX = -1000;
-	for (int index = 0; index < 2; index++)
-	{
-		if (maxX < line1[index].x) maxX = line1[index].x;
-		if (maxX < line2[index].x) maxX = line2[index].x;
-		if (minX > line1[index].x) minX = line1[index].x;
-		if (minX > line2[index].x) minX = line2[index].x;
-	}
-	return (commonPoint > minX && commonPoint < maxX && line1[1].x != line2[0].x);
+	return (inXRange && inYRange && line2[0] != line1[1]);
+}
+
+float Polygon::min(float value1, float value2)
+{
+	return (value1 < value2) ? value1 : value2;
+}
+
+float Polygon::max(float value1, float value2)
+{
+	return (value1 > value2) ? value1 : value2;
 }
