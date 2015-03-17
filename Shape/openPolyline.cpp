@@ -4,7 +4,6 @@ using namespace ShapeLibrary;
 
 OpenPolyline::OpenPolyline(IWindowAPI & _windowApi){
 	windowApi = &_windowApi;
-	windowApi->setDrawingColor(Color());
 }
 
 OpenPolyline::~OpenPolyline(){
@@ -12,7 +11,9 @@ OpenPolyline::~OpenPolyline(){
 }
 
 void OpenPolyline::draw(){
-	for (int i = 0; i < point.size(); i++){
+	if (point.size() < 2) throw runtime_error("La forme doit avoir aumoins 2 points");
+	windowApi->setDrawingColor(Color());
+	for (int i = 0; i < point.size() - 1; i++){
 		windowApi->drawLine(point[i], point[i + 1]);
 	}
 }
