@@ -13,6 +13,7 @@ namespace ShapeLibrary
 	public:
 		Shape();
 		virtual ~Shape();
+
 		virtual void add(Point & _point);
 		virtual void draw() = 0;
 		virtual void setLineColor(Color _color);

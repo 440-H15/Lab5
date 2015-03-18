@@ -12,7 +12,10 @@ namespace ShapeLibrary
 
 		void setCenter(Point & _point);
 		void setRadius(int _radius);
+		void setFillColor(Color _color);
+		void setLineColor(Color _color);
 		void draw();
+		void add(Point & _point);
 
 	private:
 		int radius;
