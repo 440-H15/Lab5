@@ -15,9 +15,9 @@ namespace ShapeLibrary
 		virtual ~Shape();
 		virtual void add(Point & _point);
 		virtual void draw() = 0;
-		//virtual void setLineColor();
+		virtual void setLineColor(Color _color);
 		//virtual Color getLineColor();
-		//virtual void setFillColor();
+		virtual void setFillColor(Color _color);
 		//virtual Color getFillColor();
 		//virtual Point getPoint(int _index);
 		//virtual int getNumberOfPoints();

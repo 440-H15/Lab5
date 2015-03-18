@@ -14,17 +14,19 @@ void Shape::add(Point & _point){
 	point.push_back(_point);
 }
 
-//void Shape::setLineColor(){
-//
-//}
-//
+void Shape::setLineColor(Color _color){
+	lineColor = _color;
+}
+
 //Color Shape::getLineColor(){
 //
 //}
 //
-//void Shape::setFillColor(){
-//
-//}
+
+void Shape::setFillColor(Color _color){
+	fillColor = _color;
+}
+
 //
 //Color Shape::getFillColor(){
 //

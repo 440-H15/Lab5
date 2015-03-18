@@ -12,7 +12,9 @@ namespace ShapeLibrary
 		void setPosition(Point & _point);
 		void setHeight(int _height);
 		void setWidth(int _width);
+		void setFillColor(Color _color);
 		void draw();
+		void add(Point & _point);
 	
 	private:
 		int height;
