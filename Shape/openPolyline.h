@@ -10,7 +10,7 @@ namespace ShapeLibrary
 		OpenPolyline(IWindowAPI & _windowApi);
 		~OpenPolyline(); 
 		
-		void draw();
+		virtual void draw();
 
 	};
 }
