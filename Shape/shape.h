@@ -20,7 +20,7 @@ namespace ShapeLibrary
 		//virtual Color getLineColor();
 		virtual void setFillColor(Color _color);
 		//virtual Color getFillColor();
-		//virtual Point getPoint(int _index);
+		virtual Point getPoint(int _index);
 		//virtual int getNumberOfPoints();
 
 	protected:

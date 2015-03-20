@@ -32,9 +32,9 @@ void Shape::setFillColor(Color _color){
 //
 //}
 //
-//Point Shape::getPoint(int _index){
-//
-//}
+Point Shape::getPoint(int _index){
+	return point[_index];
+}
 //
 //int Shape::getNumberOfPoints(){
 //
