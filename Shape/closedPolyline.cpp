@@ -2,6 +2,11 @@
 
 using namespace ShapeLibrary;
 
+ClosedPolyline::ClosedPolyline()
+{
+
+}
+
 ClosedPolyline::ClosedPolyline(IWindowAPI& _windowAPI)
 {
 	nbPoint = 0;
