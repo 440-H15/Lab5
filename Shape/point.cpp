@@ -9,17 +9,27 @@ Point::Point( double _x, double _y ) :
 	x(_x), 
 	y(_y)
 {	
+	if (_x < 0 || _y < 0) throw invalid_argument("parameters cannot be negatives");
 	
 }
 
-bool Point::operator == (const Point & point) const
+bool Point::operator == (const Point & _point) const
 {
-	throw logic_error("Not Implmented yet");
-	return true;
+	bool egal = true;
+
+	if (&_point != &*this)
+	{
+		if (_point.x != this->x || _point.y != this->y)
+		{
+			egal = false;
+		}
+	}
+
+	return egal;
+
 }
 
-bool Point::operator != (const Point & point) const
+bool Point::operator != (const Point & _point) const
 {
-	throw logic_error("Not Implmented yet");
-	return false; 
+	return !(*this == _point);
 }

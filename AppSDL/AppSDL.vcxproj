@@ -41,8 +41,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(SDL_ROOT)\include;$(SDL_DRAW_ROOT)\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SDL_ROOT)\lib\x86;$(SDL_DRAW_ROOT)\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\SDL-1.2.15\include;$(SDL_ROOT)\include;$(SDL_DRAW_ROOT)\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\SDL-1.2.15\lib\x86;$(SDL_ROOT)\lib\x86;$(SDL_DRAW_ROOT)\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
