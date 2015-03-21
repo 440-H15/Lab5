@@ -35,20 +35,16 @@ void WindowsRender::attach(Shape& _shape)
 
 void WindowsRender::putOnTop(Shape& _shape)
 {
-	vector<Shape*> tempoShapes;
+	int position = 0;
+	for (Shape *shape : shapes){
+		if (shape == &_shape)
+			break;
 
-	while (shapes.front() != &_shape)
-	{
-		tempoShapes.push_back(shapes.front());
-		shapes.pop_back();
+		position++;
 	}
-	shapes.pop_back();
 
-	for (int i = tempoShapes.size(); i > 0; i--)
-	{
-		shapes.push_back(tempoShapes.front());
-		tempoShapes.pop_back();
-	}
+	shapes.erase(shapes.begin() + position);
+
 	shapes.push_back(&_shape);
 }
 
