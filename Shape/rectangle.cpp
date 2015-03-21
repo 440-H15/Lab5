@@ -33,7 +33,8 @@ void Rectangle::draw() const
 	if (getNumberOfPoints() < 1)
 		throw runtime_error("La position doit être précisée.");
 
-	windowAPI->setDrawingColor(getLineColor());
+	windowAPI->setDrawingColor(getFillColor());
 	windowAPI->fillRectangle(getPoint(0), width, height);
+	windowAPI->setDrawingColor(getLineColor());
 	windowAPI->drawRectangle(getPoint(0), width, height);
 }
