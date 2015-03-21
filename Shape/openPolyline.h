@@ -3,10 +3,13 @@
 
 namespace ShapeLibrary
 {
-	class OpenPolyline
+	class OpenPolyline :public Shape
 	{
+		
 
-
-
+	public:
+		explicit OpenPolyline(const IWindowAPI& _windowAPI);
+		
+		
 	};
 }

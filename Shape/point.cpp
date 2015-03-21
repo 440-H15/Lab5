@@ -26,7 +26,6 @@ bool Point::operator == (const Point & _point) const
 	}
 
 	return egal;
-
 }
 
 bool Point::operator != (const Point & _point) const
