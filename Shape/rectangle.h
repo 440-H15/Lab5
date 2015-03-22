@@ -1,4 +1,3 @@
-#pragma once
 #include "stdafx.h"
 
 namespace ShapeLibrary
@@ -6,8 +5,18 @@ namespace ShapeLibrary
 	class Rectangle : public Shape
 	{
 	public:
-		Rectangle(IWindowAPI & _iWindowAPI);
+		void draw() const;
+		Rectangle(IWindowAPI& _windowAPI);
 		~Rectangle();
+		void setPosition(Point _point);
+		void setHeight(int _height);
+		void setWidth(int _width);
+
+	private:
+		int height;
+		int width;
 
 	};
+
+
 }
