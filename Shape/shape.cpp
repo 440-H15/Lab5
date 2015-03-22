@@ -4,13 +4,13 @@ using namespace ShapeLibrary;
 
 Shape::Shape(const IWindowAPI &_windowAPI)
 {
-	*windowAPI = _windowAPI;
+	*this->windowAPI = _windowAPI;
 }
 
 
 Shape::~Shape()
 {
-	delete windowAPI;
+	//delete windowAPI;
 }
 
 

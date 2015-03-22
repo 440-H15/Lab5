@@ -5,22 +5,22 @@ using namespace ShapeLibrary;
 
 namespace UnitTests
 {
-	TEST_CLASS(RectangleTests)
-	{
-	public:
-		//FakeWindowAPI * fakeWindowAPI;
-		//Rectangle * rectangle;
+	//TEST_CLASS(RectangleTests)
+	//{
+	//public:
+	//	FakeWindowAPI * fakeWindowAPI;
+	//	Rectangle * rectangle;
 
-		//TEST_METHOD_INITIALIZE(RectangleTests_Initialize)
-		//{
-		//	fakeWindowAPI = new FakeWindowAPI(640, 480, "Super beau dessin");
-		//	rectangle = new Rectangle(*fakeWindowAPI);
-		//}
-		//TEST_METHOD_CLEANUP(RectangleTests_CleanUp)
-		//{
-		//	delete fakeWindowAPI;
-		//	delete rectangle;
-		//}
+	//	TEST_METHOD_INITIALIZE(RectangleTests_Initialize)
+	//	{
+	//		fakeWindowAPI = new FakeWindowAPI(640, 480, "Super beau dessin");
+	//		rectangle = new Rectangle(*fakeWindowAPI);
+	//	}
+	//	TEST_METHOD_CLEANUP(RectangleTests_CleanUp)
+	//	{
+	//		delete fakeWindowAPI;
+	//		delete rectangle;
+	//	}
 
 		//TEST_METHOD(draw_rectangle_should_draw_a_rectangle_on_windowAPI)
 		//{
@@ -126,4 +126,3 @@ namespace UnitTests
 		//	Assert::IsTrue(exceptionThrown);
 		//}
 	};
-}

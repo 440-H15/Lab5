@@ -23,8 +23,6 @@ namespace ShapeLibrary
 
 	protected:
 		void add(const Point& _point);
-
-	private:
 		IWindowAPI * windowAPI;
 		vector<Point> points;
 		Color lineColor;

@@ -3,10 +3,10 @@
 
 namespace ShapeLibrary
 {
-	class Rectangle
+	class Rectangle : public Shape
 	{
 	public:
+		explicit Rectangle(const IWindowAPI& _windowAPI);
 
-	
 	};
 }
