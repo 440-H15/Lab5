@@ -3,12 +3,12 @@
 
 namespace ShapeLibrary
 {
-	class Circle : Shape
+	class Circle : public Shape
 	{
 	public:
 		
 		Circle(IWindowAPI & _windowApi);
-		~Circle();
+	    ~Circle();
 
 		void setCenter(Point & _point);
 		void setRadius(int _radius);

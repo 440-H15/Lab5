@@ -11,7 +11,7 @@ namespace ShapeLibrary
 	class Shape
 	{
 	public:
-		Shape();
+		Shape(IWindowAPI & _windowApi);
 		virtual ~Shape();
 
 		virtual void add(Point & _point);

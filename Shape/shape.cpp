@@ -2,8 +2,8 @@
 
 using namespace ShapeLibrary;
 
-Shape::Shape(){
-
+Shape::Shape(IWindowAPI & _windowApi){
+	windowApi = &_windowApi;
 }
 
 Shape::~Shape(){

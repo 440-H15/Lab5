@@ -34,13 +34,13 @@ void Polygon::add(Point & _point){
 	if (point.size() < 2){
 		point.push_back(_point);
 	}
-	else if(point.size() == 2){
+	else if (point.size() == 2){
 		if (checkIfPointIsOnSameLine(point[0], point[1], _point)){
 			throw runtime_error("There should not be a point on a line");
 		}
 		point.push_back(_point);
 	}
-	else if(point.size() > 2){
+	else if (point.size() > 2){
 		if (checkIfPointIsOnSameLine(point[lastIndexOfVector - 1], point[lastIndexOfVector], _point)) throw runtime_error("There should not be a point on a line");
 		for (int i = 0; i < lastIndexOfVector - 1; i++){ //il est certain que les deux derniers ont une intersection
 			if (checkIfIntersection(point[i], point[i + 1], point[lastIndexOfVector], _point)) throw runtime_error("A polygon should not contain an intersection");
@@ -87,4 +87,3 @@ bool Polygon::checkIfIntersection(const Point & _point1, const Point & _point2, 
 
 	return true;
 }
-	
