@@ -6,7 +6,8 @@ namespace ShapeLibrary
 	class Rectangle : public Shape
 	{
 	public:
-		explicit Rectangle(const IWindowAPI& _windowAPI);
+		Rectangle(IWindowAPI & _iWindowAPI);
+		~Rectangle();
 
 	};
 }

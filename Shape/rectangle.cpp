@@ -2,6 +2,10 @@
 
 using namespace ShapeLibrary;
 
-Rectangle::Rectangle(const IWindowAPI& _windowAPI): Shape(_windowAPI)
+Rectangle::Rectangle(IWindowAPI & _iWindowAPI)
+	: Shape(_iWindowAPI)
+{}
+
+Rectangle::~Rectangle()
 {
 }

@@ -2,69 +2,37 @@
 
 using namespace ShapeLibrary;
 
-Shape::Shape(const IWindowAPI &_windowAPI)
+Shape::Shape(IWindowAPI & _windowAPI)
 {
-	*this->windowAPI = _windowAPI;
-}
-
-
-Shape::~Shape()
-{
-	//delete windowAPI;
-}
-
-
-void Shape::add(const Point& _point)
-{
-	this->points.push_back(_point);
-}
-
-
-void Shape::draw()
-{
+	windowAPI = &_windowAPI;
 	
 }
-
-void Shape::setLineColor(Color _color)
+void Shape::add(const Point & _point)
 {
-	this->lineColor = _color;
+	points.push_back(_point);
 }
 
-
-Color Shape::getLineColor() const
+Point Shape::getPoint(int _index)
 {
-	return this->lineColor;
+	return points[_index];
 }
 
-
-void Shape::setFillColor(Color _color)
+void Shape::setLineColor(const Color &_lineColor)
 {
-	this->fillColor = _color;
+	lineColor = _lineColor;
 }
 
-
-Color Shape::getFillColor() const
+Color const Shape::getLineColor() const
 {
-	return this->fillColor;
+	return lineColor;
 }
 
-
-Point Shape::getPoint(const unsigned int& _index) const
+void Shape::setFillColor(const Color &_fillColor)
 {
-	if (_index < this->points.size())
-	{
-		return this->points[_index];
-	}
-	else
-	{
-		throw invalid_argument::exception("invalid parameter");
-	}
+	fillColor = _fillColor;
 }
 
-
-
-int Shape::getNumberOfPoints() const
+Color const Shape::getFillColor() const
 {
-	return this->points.size();
+	return fillColor;
 }
-

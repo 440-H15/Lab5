@@ -11,23 +11,21 @@ namespace ShapeLibrary
 	class Shape
 	{
 	public:
-		~Shape();
-		Shape(const IWindowAPI &_windowAPI);
-		void draw();
-		void setLineColor(Color _color);
-		Color getLineColor() const;
-		void setFillColor(Color _color);
-		Color getFillColor() const;
-		Point getPoint(const unsigned int& _index) const;
-		int getNumberOfPoints() const;
 
+		Shape(IWindowAPI & windowAPI);
+		virtual void draw()const = 0;
+		virtual void add(const Point & _point);
+		virtual Point getPoint(int _index);
+		virtual void setLineColor(const Color &_lineColor);
+		virtual const Color getLineColor() const;
+		virtual void setFillColor(const Color &_fillColor);
+		virtual const Color getFillColor() const;
 	protected:
-		void add(const Point& _point);
+
 		IWindowAPI * windowAPI;
 		vector<Point> points;
+	private:
 		Color lineColor;
 		Color fillColor;
-
-
 	};
 }
