@@ -30,7 +30,8 @@ void Rectangle::setWidth(int _width)
 
 void Rectangle::draw() const
 {
-	if (points.empty()) throw runtime_error("Height cannot be negative");
+	if (points.empty()) throw runtime_error("Rectangle does not have a position");
+
 	windowAPI->setDrawingColor(getLineColor());
 	windowAPI->fillRectangle(this->getPoint(0), width, height);
 	windowAPI->drawRectangle(this->getPoint(0), width, height);

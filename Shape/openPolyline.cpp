@@ -2,8 +2,8 @@
 
 using namespace ShapeLibrary;
 
-OpenPolyline::OpenPolyline(IWindowAPI & _iWindowAPI)
-	: Shape(_iWindowAPI)
+OpenPolyline::OpenPolyline(IWindowAPI & _windowAPI)
+	: Shape(_windowAPI)
 {}
 
 OpenPolyline::~OpenPolyline()
@@ -13,9 +13,10 @@ OpenPolyline::~OpenPolyline()
 
 void OpenPolyline::draw() const
 {
-	if (points.size() <= 1) throw runtime_error("nombre de point inférieur à 2");
+	if (points.size() < 2) throw runtime_error("nombre de point inférieur à 2");
+
 	windowAPI->setDrawingColor(getLineColor());
-	for (size_t i = 0; i < points.size(); i++)
+	for (auto i = 0; i < points.size(); i++)
 	{
 		if (i + 1 < points.size())
 		{
