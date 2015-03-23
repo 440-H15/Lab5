@@ -17,11 +17,13 @@ namespace ShapeLibrary
 		virtual void add(Point & _point);
 		virtual void draw() = 0;
 		virtual void setLineColor(Color _color);
-		//virtual Color getLineColor();
+		virtual Color getLineColor() const;
 		virtual void setFillColor(Color _color);
-		//virtual Color getFillColor();
-		virtual Point getPoint(int _index);
-		//virtual int getNumberOfPoints();
+		virtual Color getFillColor() const;
+		virtual Point getPoint(int _index) const;
+		virtual int getNumberOfPoints() const;
+		
+		bool operator==(const Shape &_source) const;
 
 	protected:
 		IWindowAPI *windowApi;

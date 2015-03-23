@@ -48,7 +48,7 @@ void Polygon::add(Point & _point){
 		point.push_back(_point);
 	}
 }
-bool Polygon::checkIfPointIsOnSameLine(const Point & _point1, const Point & _point2, const Point & _point3){
+bool Polygon::checkIfPointIsOnSameLine(const Point & _point1, const Point & _point2, const Point & _point3) const{
 	double x1 = _point1.x, x2 = _point2.x, x3 = _point3.x;
 	double y1 = _point1.y, y2 = _point2.y, y3 = _point3.y;
 
@@ -65,7 +65,7 @@ bool Polygon::checkIfPointIsOnSameLine(const Point & _point1, const Point & _poi
 
 }
 
-bool Polygon::checkIfIntersection(const Point & _point1, const Point & _point2, const Point & _point3, const Point & _point4){
+bool Polygon::checkIfIntersection(const Point & _point1, const Point & _point2, const Point & _point3, const Point & _point4) const{
 	double x1 = _point1.x, x2 = _point2.x, x3 = _point3.x, x4 = _point4.x;
 	double y1 = _point1.y, y2 = _point2.y, y3 = _point3.y, y4 = _point4.y;
 

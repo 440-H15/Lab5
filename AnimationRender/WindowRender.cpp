@@ -41,5 +41,10 @@ void WindowsRender::attach(Shape &_shape){
 }
 
 void WindowsRender::putOnTop(Shape &_shape){
-	shapes.push_back(&_shape);
+	for (int i = 0; i < shapes.size(); i++){
+		if (*shapes[i] == _shape){
+			shapes.erase(shapes.begin() + i);
+			shapes.push_back(&_shape);
+		}
+	}
 }

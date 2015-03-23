@@ -13,7 +13,7 @@ namespace ShapeLibrary
 		void add(Point & _point);
 
 	private:
-		bool checkIfPointIsOnSameLine(const Point & _point1, const Point & _point2, const Point & _point3);
-		bool checkIfIntersection(const Point & _point1, const Point & _point2, const Point & _point3, const Point & _point4);
+		bool checkIfPointIsOnSameLine(const Point & _point1, const Point & _point2, const Point & _point3) const;
+		bool checkIfIntersection(const Point & _point1, const Point & _point2, const Point & _point3, const Point & _point4) const;
 	};
 }
