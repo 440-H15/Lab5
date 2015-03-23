@@ -9,19 +9,19 @@ namespace UnitTests
 	TEST_CLASS(CircleTests)
 	{
 	public:
-		//FakeWindowAPI * fakeWindowAPI;
-		//Circle * circle;
+		FakeWindowAPI * fakeWindowAPI;
+		Circle * circle;
 
-		//TEST_METHOD_INITIALIZE(CircleTests_Initialize)
-		//{
-		//	fakeWindowAPI = new FakeWindowAPI(640,480,"Super beau dessin");
-		//	circle = new Circle(*fakeWindowAPI);
-		//}
-		//TEST_METHOD_CLEANUP(CircleTests_CleanUp)
-		//{
-		//	delete fakeWindowAPI;
-		//	delete circle;
-		//}
+		TEST_METHOD_INITIALIZE(CircleTests_Initialize)
+		{
+			fakeWindowAPI = new FakeWindowAPI(640,480,"Super beau dessin");
+			circle = new Circle(*fakeWindowAPI);
+		}
+		TEST_METHOD_CLEANUP(CircleTests_CleanUp)
+		{
+			delete fakeWindowAPI;
+			delete circle;
+		}
 
 		//TEST_METHOD(draw_circle_should_draw_circle_on_windowAPI)
 		//{

@@ -18,16 +18,20 @@ void Rectangle::setPosition(Point _point)
 
 void Rectangle::setHeight(int _height)
 {
+	if (_height < 0) throw invalid_argument("Height cannot be negative");
 	height = _height;
 }
 
 void Rectangle::setWidth(int _width)
 {
+	if (_width < 0) throw invalid_argument("Width cannot be negative");
 	width = _width;
 }
 
 void Rectangle::draw() const
 {
+	if (points.empty()) throw runtime_error("Height cannot be negative");
 	windowAPI->setDrawingColor(getLineColor());
+	windowAPI->fillRectangle(this->getPoint(0), width, height);
 	windowAPI->drawRectangle(this->getPoint(0), width, height);
 }
