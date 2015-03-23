@@ -14,5 +14,8 @@ namespace ShapeLibrary
 		vector<Point> point;
 		int nbPoint;
 		bool checkLineOnOtherLine(const Point & point1, const Point & point2, const Point & point3, const Point & point4);
+		bool checkLineCrossOtherLine(const Point & point1, const Point & point2, const Point & point3, const Point & point4);
+		bool executeCheckLineCross();
+		bool executeCheckLineOnOtherLine();
 	};
 }
