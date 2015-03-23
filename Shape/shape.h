@@ -13,6 +13,10 @@ namespace ShapeLibrary
 	public:
 		virtual void add(Point _point);
 		virtual void draw();
-
+		virtual Point getPoint(const int& _index);
+	protected:
+		IWindowAPI* windowAPI;
+		vector<Point> point;
+		int nbPoint;
 	};
 }

@@ -10,9 +10,6 @@ namespace ShapeLibrary
 		OpenPolyline();
 		void add(Point _point);
 		void draw();
-	private:
-		IWindowAPI* windowAPI;
-		vector<Point> point;
-		int nbPoint;
+	
 	};
 }
