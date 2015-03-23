@@ -5,7 +5,6 @@ using namespace WindowRender;
 WindowEvent::WindowEvent()
 {
 	eventType = NONE;
-
 }
 
 WindowEvent::WindowEvent( const WIN_EVENEMENT & _eventType )
