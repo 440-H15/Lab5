@@ -9,6 +9,10 @@ namespace ShapeLibrary
 		void draw() const;
 		Circle(IWindowAPI& _windowAPI);
 		~Circle();
+		void setCenter(Point _point);
+		void setRadius(int _radius);
 
+	private:
+		int radius;
 	};
 }
