@@ -1,5 +1,5 @@
 #include  "stdafx.h"
-
+#include "windowEvent.h"
 using namespace WindowRender;
 
 WindowEvent::WindowEvent()

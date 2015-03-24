@@ -1,19 +1,23 @@
 #include "stdafx.h"
-
+#include "rectangle.h"
 using namespace ShapeLibrary;
 
 Rectangle::Rectangle(IWindowAPI& _windowAPI)
 {
-	point = nullptr;
 	windowAPI = &_windowAPI;
 	width = 0;
 	height = 0;
-	lineColor = Color::BLUE;
+	lineColor = Color::WHITE;
+	fillColor = Color::INVISIBLE;
 }
 
 void Rectangle::setPosition(Point& _point)
 {
-	this->point = &_point;
+	if (point.size() > 0)
+	{
+		point.pop_back();
+	}
+	point.push_back(_point);
 }
 
 void Rectangle::setHeight(int _height)
@@ -30,19 +34,9 @@ void Rectangle::setWidth(int _width)
 
 void Rectangle::draw()
 {
-	if (point == nullptr) throw runtime_error("Le rectangle n'a pas de position");
+	if (point.size() <= 0) throw runtime_error("Le rectangle n'a pas de position");
+	this->windowAPI->setDrawingColor(fillColor);
+	this->windowAPI->fillRectangle(point[0], width, height);
 	this->windowAPI->setDrawingColor(lineColor);
-	
-	this->windowAPI->drawRectangle(*point, width, height);
-	
-}
-
-void Rectangle::setFillColor(Color _color)
-{
-	this->windowAPI->fillRectangle(*point, width, height);
-}
-
-void Rectangle::setLineColor(Color _color)
-{
-	lineColor = _color;
+	this->windowAPI->drawRectangle(point[0], width, height);
 }

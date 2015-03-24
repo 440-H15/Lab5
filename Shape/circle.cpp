@@ -1,18 +1,22 @@
 #include "stdafx.h"
-
+#include "circle.h"
 using namespace ShapeLibrary;
 
 Circle::Circle(IWindowAPI& _windowAPI)
 {
-	lineColor = Color::BLUE;
-	point = nullptr;
 	radius = 0;
 	windowAPI = &_windowAPI;
+	lineColor = Color::WHITE;
+	fillColor = Color::INVISIBLE;
 }
 
 void Circle::setCenter(Point& _point)
 {
-	point = &_point;
+	if (point.size() > 0)
+	{
+		point.pop_back();
+	}
+	point.push_back(_point);
 }
 
 void Circle::setRadius(int _radius)
@@ -23,17 +27,9 @@ void Circle::setRadius(int _radius)
 
 void Circle::draw()
 {
-	if (point == nullptr) throw runtime_error("Le cercle n'a pas de point centrale");
+	if (point.size() <= 0) throw runtime_error("Le cercle n'a pas de point centrale");
+	this->windowAPI->setDrawingColor(fillColor);
+	this->windowAPI->fillCircle(point[0], radius);
 	this->windowAPI->setDrawingColor(lineColor);
-	this->windowAPI->drawCircle(*point, radius);
-}
-
-void Circle::setFillColor(Color _color)
-{
-	this->windowAPI->fillCircle(*point, radius);
-}
-
-void Circle::setLineColor(Color _color)
-{
-	lineColor = _color;
+	this->windowAPI->drawCircle(point[0], radius);
 }

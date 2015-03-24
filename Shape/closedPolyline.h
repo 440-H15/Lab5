@@ -8,7 +8,6 @@ namespace ShapeLibrary
 	public:
 		ClosedPolyline();
 		ClosedPolyline(IWindowAPI& _windowAPI);
-		void add(Point _point);
 		void draw();
 	
 	};

@@ -1,5 +1,5 @@
 #include "stdafx.h"
-
+#include "point.h"
 #include <stdexcept>
 
 using namespace ShapeLibrary;

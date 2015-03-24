@@ -1,5 +1,5 @@
 #include "stdafx.h"
-
+#include "color.h"
 using namespace ShapeLibrary;
 
 Color::Color()
