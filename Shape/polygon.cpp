@@ -1,4 +1,5 @@
 #include "stdafx.h"
+#include <algorithm>
 
 using namespace ShapeLibrary;
 
@@ -54,14 +55,4 @@ bool Polygon::doLineCross(Point line1[], Point line2[])
 	bool inYRange = (commonY >= min(line2[0].y, line2[1].y) && commonY <= max(line2[0].y, line2[1].y));
 
 	return (inXRange && inYRange && line2[0] != line1[1]);
-}
-
-float Polygon::min(float value1, float value2)
-{
-	return (value1 < value2) ? value1 : value2;
-}
-
-float Polygon::max(float value1, float value2)
-{
-	return (value1 > value2) ? value1 : value2;
 }

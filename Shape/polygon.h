@@ -10,7 +10,5 @@ namespace ShapeLibrary
 		void add(const Point &_point) override;
 	private:
 		bool doLineCross(Point line1[], Point line2[]);
-		float min(float value1, float value2);
-		float max(float value1, float value2);
 	};
 }
