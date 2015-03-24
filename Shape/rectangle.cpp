@@ -29,3 +29,8 @@ void Rectangle::setPosition(Point &_point)
 {
 	position = &_point;
 }
+
+void Rectangle::add(const Point &_point)
+{
+	throw std::runtime_error("Cette fonction n'est pas appliquable ppour cette forme");
+}

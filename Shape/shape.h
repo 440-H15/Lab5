@@ -13,7 +13,7 @@ namespace ShapeLibrary
 	public:
 		Shape(IWindowAPI &_windowAPI);
 		~Shape();
-		void virtual draw() = 0;
+		virtual void draw() = 0;
 		void setLineColor(const Color& _lineColor);
 		const Color & getLineColor() const;
 		void setFillColor(const Color& _fillColor);

@@ -50,8 +50,8 @@ bool Polygon::doLineCross(Point line1[], Point line2[])
 	commonX = roundf(commonX * 10) / 10;
 	commonY = roundf(commonY * 10) / 10;
 	
-	bool inXRange = commonX >= min(line2[0].x, line2[1].x) && commonX <= max(line2[0].x, line2[1].x);
-	bool inYRange = commonY >= min(line2[0].y, line2[1].y) && commonY <= max(line2[0].y, line2[1].y);
+	bool inXRange = (commonX >= min(line2[0].x, line2[1].x) && commonX <= max(line2[0].x, line2[1].x));
+	bool inYRange = (commonY >= min(line2[0].y, line2[1].y) && commonY <= max(line2[0].y, line2[1].y));
 
 	return (inXRange && inYRange && line2[0] != line1[1]);
 }
