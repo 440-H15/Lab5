@@ -22,12 +22,12 @@ void Polygon::add(Point _point)
 	points.push_back(_point);
 }
 
-bool Polygon::isOnSameLine(Point _dernierPoint)
+bool Polygon::isOnSameLine(Point _dernierPointAjoute)
 {
 	if (points.size() >= 2)
 	{
-		double x1 = points[points.size() - 2].x, x2 = points[points.size() - 1].x, x3 = _dernierPoint.x;
-		double y1 = points[points.size() - 2].y, y2 = points[points.size() - 1].y, y3 = _dernierPoint.y;
+		double x1 = points[points.size() - 2].x, x2 = points[points.size() - 1].x, x3 = _dernierPointAjoute.x;
+		double y1 = points[points.size() - 2].y, y2 = points[points.size() - 1].y, y3 = _dernierPointAjoute.y;
 
 		double penteDerniereLigne = (y2 - y1) / (x2 - x1);
 		double penteNouveauPoint = (y3 - y2) / (x3 - x2);
@@ -40,12 +40,12 @@ bool Polygon::isOnSameLine(Point _dernierPoint)
 	return false;
 }
 
-bool Polygon::isCrossingLine(Point _dernierPoint)
+bool Polygon::isCrossingLine(Point _dernierPointAjoute)
 {
 	if (points.size() >= 3)
 	{
-		double x1, x2, x3, x4 = _dernierPoint.x;
-		double y1, y2, y3, y4 = _dernierPoint.y;
+		double x1, x2, x3, x4 = _dernierPointAjoute.x;
+		double y1, y2, y3, y4 = _dernierPointAjoute.y;
 
 		for (int i = 0; i < points.size() - 2; i += 3)
 		{

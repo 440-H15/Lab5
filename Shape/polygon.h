@@ -12,7 +12,7 @@ namespace ShapeLibrary
 		void add(Point _point);
 
 	private:
-		bool isOnSameLine(Point _dernierPoint);
-		bool isCrossingLine(Point _dernierPoint);
+		bool isOnSameLine(Point _dernierPointAjoute);
+		bool isCrossingLine(Point _dernierPointAjoute);
 	};
 }
