@@ -18,6 +18,10 @@ Rectangle::~Rectangle()
 
 void Rectangle::setPosition(Point _point)
 {
+	if (points.size() > 0)
+	{
+		points.pop_back();
+	}
 	points.push_back(_point);
 }
 

@@ -17,7 +17,10 @@ Circle::~Circle()
 
 void Circle::setCenter(Point _point)
 {
-	points.pop_back();
+	if (points.size() > 0)
+	{
+		points.pop_back();
+	}
 	points.push_back(_point);
 }
 
