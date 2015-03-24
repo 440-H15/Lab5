@@ -11,6 +11,7 @@ namespace ShapeLibrary
 		void setHeight(const int _height);
 		void setWidth(const int _width);
 		void setPosition(Point &_point);
+		void add(const Point &_point) override;
 	private:
 		Point * position = nullptr;
 		unsigned int height = 0;

@@ -23,3 +23,8 @@ void Circle::setRadius(const int _radius)
 	if (_radius < 1) throw std::invalid_argument("Le rayon doit au moins être de 1");
 	radius = _radius;
 }
+
+void Circle::add(const Point &_point)
+{
+	throw std::runtime_error("Cette fonction n'est pas appliquable ppour cette forme");
+}
