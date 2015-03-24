@@ -9,12 +9,13 @@ namespace WindowRender
 	class WindowsRender
 	{
 	public:
-	void render();
-
-	private :
+		WindowsRender(IWindowAPI &_windowAPI);
+		~WindowsRender();
+		void render();
+		void attach(Shape &_shape);
+		void putOnTop(Shape &_shape);
+	private:
 		IWindowAPI * windowAPI;
-		vector <Shape*> shapes;
-
-		
+		vector<Shape*> shapes;
 	};
 }
