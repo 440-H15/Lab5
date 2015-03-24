@@ -8,10 +8,10 @@ namespace ShapeLibrary
 	public:
 		Polygon(IWindowAPI &_windowAPI);
 		~Polygon();
-		void draw() const;
-		void add(const Point & _point);
+		void add(const Point &_point) override;
 	private:
-		bool isLineValid(const Point &_point);
-		bool isNewLineCrossingPreviousLine(const Point &_point);
+		bool doLineCross(Point line1[], Point line2[]);
+		float min(float value1, float value2);
+		float max(float value1, float value2);
 	};
 }

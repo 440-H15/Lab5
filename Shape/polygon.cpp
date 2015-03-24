@@ -11,47 +11,64 @@ Polygon::~Polygon()
 {
 }
 
-void Polygon::draw() const
+void Polygon::add(const Point &_point)
 {
-	windowAPI->setDrawingColor(getLineColor());
-	ClosedPolyline::draw();
-}
-
-void Polygon::add(const Point & _point)
-{
-	if (!isLineValid(_point)) throw runtime_error("The point is on the previous line.");
-	if (isNewLineCrossingPreviousLine(_point)) throw runtime_error("The line the new point is forming is crossing a previous line");
+	if (points.size() >= 2)
+	{
+		Point line2[] {points.at(points.size() - 1), _point};
+		for (int index = points.size() - 2; index >= 0; index--)
+		{
+			Point line1[] {points.at(index), points.at(index + 1)};
+			if (doLineCross(line1, line2))
+				throw std::runtime_error("Point invalide");
+		}
+	}
 	points.push_back(_point);
 }
 
-bool Polygon::isLineValid(const Point &_point)
+bool Polygon::doLineCross(Point line1[], Point line2[])
 {
-	if (points.size() < 2) return true;
-	double x1 = points[points.size() - 2].x, x2 = points[points.size() - 1].x, x3 = _point.x;
-	double y1 = points[points.size() - 2].y, y2 = points[points.size() - 1].y, y3 = _point.y;
+	float pente1 = (line1[1].y - line1[0].y) / (line1[1].x - line1[0].x);
+	float pente2 = (line2[1].y - line2[0].y) / (line2[1].x - line2[0].x);
+	float origine1 = line1[0].y - (pente1 * line1[0].x);
+	float origine2 = line2[0].y - (pente2 * line2[0].x);
 
-	double variation = (y3 - y2) / (x3 - x2);
-	double origin = y3 - (variation * x3);
-	double previousLineVariation = (y2 - y1) / (x2 - x1);
-	double previousLineOrigin = y1 - (previousLineVariation * x1);
+	if (pente1 == pente2 && origine1 == origine2) return true;
 
-	if (variation + origin == previousLineVariation + previousLineOrigin) return false;
+	float commonX = 0;
+	float commonY = 0;
 
-	return true;
+	if (line1[1].x == line1[0].x)
+	{
+		commonX = line1[0].x;
+		commonY = commonX * pente2 + origine2;
+	}
+	else if (line2[1].x == line2[0].x)
+	{
+		commonX = line2[0].x;
+		commonY = commonX * pente1 + origine1;
+	}
+	else
+	{
+		commonX = (origine1 - origine2) / (pente2 - pente1);
+		commonY = commonX * pente2 + origine2;
+	}
+
+	commonX = roundf(commonX * 10) / 10;
+	commonY = roundf(commonY * 10) / 10;
+
+	bool inXRange = commonX >= min(line2[0].x, line2[1].x) && commonX <= max(line2[0].x, line2[1].x);
+	bool inYRange = commonY >= min(line2[0].y, line2[1].y) && commonY <= max(line2[0].y, line2[1].y);
+
+	return (inXRange && inYRange && line2[0] != line1[1]);
 }
 
-bool Polygon::isNewLineCrossingPreviousLine(const Point &_point)
+float Polygon::min(float value1, float value2)
 {
-	if (points.size() < 2) return false;
-	double x1, x2, x3 = _point.x;
-	double y1, y2, y3 = _point.y;
+	return (value1 < value2) ? value1 : value2;
+}
 
-	for (unsigned int i = 0; i < points.size(); i += 2)
-	{
-		x1 = points[i].x, y1 = points[i].y;
-		x2 = points[i + 1].x, y2 = points[i + 1].y;
-
-		if (((x1 - x2) * (x2 - x3) - (y1 - y2) * (y2 - y3)) == 0) return true;
-	}
-	return false;
+float Polygon::max(float value1, float value2)
+{
+	return (value1 > value2) ? value1 : value2;
 }
