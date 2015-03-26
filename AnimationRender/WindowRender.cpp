@@ -3,6 +3,8 @@
 using namespace WindowRender;
 using namespace ShapeLibrary;
 
+
+
 WindowsRender::WindowsRender(IWindowAPI & _windowsApi){
 	windowsApi = &_windowsApi;
 }
@@ -26,13 +28,14 @@ void WindowsRender::render(){
 			}
 		}
 
+		windowsApi->clearScreen();
+
 		for (int i = 0; i < shapes.size(); i++){
 			shapes[i]->draw();
 		}
 
 		windowsApi->displayScreen();
-		windowsApi->clearScreen();
-		windowsApi->wait(1000);
+		windowsApi->wait(1000 / 30);
 	}
 }
 

@@ -3,7 +3,7 @@
 using namespace ShapeLibrary;
 
 Circle::Circle(IWindowAPI  & _windowApi) : Shape(_windowApi){
-	windowApi = &_windowApi;
+
 }
 
 Circle::~Circle(){
@@ -21,12 +21,14 @@ void Circle::setRadius(int _radius){
 
 void Circle::draw(){
 	if (point.empty()) throw runtime_error("There should be a starting point before drawing a circle");
-	windowApi->setDrawingColor(Color());
+
+	windowApi->setDrawingColor(Shape::getFillColor());
+	windowApi->fillCircle(getPoint(0), radius);
 	windowApi->drawCircle(point[0], radius);
 }
 
 void Circle::setFillColor(Color _color){
-	windowApi->fillCircle(point[0], radius);
+	fillColor = _color;
 }
 
 void Circle::setLineColor(Color _color){

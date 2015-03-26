@@ -50,3 +50,7 @@ bool Shape::operator==(const Shape &_source) const{
 		return false;
 	}
 }
+
+void Shape::draw(){
+	if (windowApi == nullptr) throw runtime_error("Le windowApi ne doit pas être nul");
+}

@@ -14,7 +14,7 @@ Polygon::~Polygon(){
 
 
 void Polygon::draw(){
-	windowApi->setDrawingColor(Color());
+	windowApi->setDrawingColor(Shape::getLineColor());
 
 	int lastIndexOfPoint = point.size() - 1;
 	for (int i = 0; i < point.size(); i++){
