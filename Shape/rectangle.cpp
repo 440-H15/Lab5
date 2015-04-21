@@ -25,14 +25,16 @@ void Rectangle::setWidth(int _width){
 	width = _width;
 }
 
-void Rectangle::setFillColor(Color _color){
-	windowApi->fillRectangle(point[0], width, height);
-}
 
 void Rectangle::draw(){
 	if (point.empty()) throw runtime_error("Starting positin should be set before drawing");
+
 	windowApi->setDrawingColor(Shape::getLineColor());
 	windowApi->drawRectangle(point[0], width, height);
+
+	windowApi->setDrawingColor(Shape::getFillColor());
+	windowApi->fillRectangle(point[0], width - 1, height -     1);
+
 }
 
 void Rectangle::add(Point & _point){

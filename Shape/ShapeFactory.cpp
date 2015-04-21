@@ -30,15 +30,13 @@ Shape & ShapeFactory::createRectangle(Point &_point, int _height, int _width) co
 	rectangle->setPosition(_point);
 	rectangle->setHeight(_height);
 	rectangle->setWidth(_width);
-	rectangle->setFillColor(Color::BLUE);
-
+	
 	return *rectangle;
 }
 
 Shape & ShapeFactory::createCircle(Point &_point, int _radius) const{
 
 	Circle * circle = new Circle(*windowApi);
-	circle->setFillColor(Color::RED);
 	circle->setCenter(_point);
 	circle->setRadius(_radius);
 

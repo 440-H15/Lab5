@@ -22,17 +22,12 @@ void Circle::setRadius(int _radius){
 void Circle::draw(){
 	if (point.empty()) throw runtime_error("There should be a starting point before drawing a circle");
 
+	windowApi->setDrawingColor(Shape::getLineColor());
+	windowApi->drawCircle(point[0], radius + 1);
+
 	windowApi->setDrawingColor(Shape::getFillColor());
 	windowApi->fillCircle(getPoint(0), radius);
-	windowApi->drawCircle(point[0], radius);
-}
 
-void Circle::setFillColor(Color _color){
-	fillColor = _color;
-}
-
-void Circle::setLineColor(Color _color){
-	lineColor = _color;
 }
 
 void Circle::add(Point & _point){
