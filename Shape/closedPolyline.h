@@ -3,9 +3,13 @@
 
 namespace ShapeLibrary
 {
-	class ClosedPolyline
+	class ClosedPolyline : public OpenPolyline
 	{
-	
+	public : 
+		ClosedPolyline(IWindowAPI & _windowApi);
+		~ClosedPolyline();
+
+		void draw();
 
 
 	};
